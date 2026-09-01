@@ -1,4 +1,4 @@
-import all_ssh_execute
+import allssh_tools.allssh_execute as allssh_execute
 import getpass
 import re
 from datetime import datetime
@@ -60,7 +60,7 @@ def get_tenant_names():
         print('='*60)
         
         # Execute commands
-        results = all_ssh_execute.ssh_execute(hostname, username, password, commands)
+        results = allssh_execute.ssh_execute(hostname, username, password, commands)
         
         if results:
             # Parse tenant IDs from the output
@@ -95,7 +95,7 @@ def get_tenant_names():
         print("SAVING COMBINED RESULTS")
         print('='*60)
 
-        filename = f"all_ssh_tools\\outputs\\all_clusters_tenants_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
+        filename = f"allssh_tools\\outputs\\allclusters_tenants_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
         
         with open(filename, 'w') as f:
             f.write(f"Cohesity Tenant Report\n")
