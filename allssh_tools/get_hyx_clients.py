@@ -29,7 +29,7 @@ def parse_tenant_ids(output):
 
 def get_tenant_names():
     # Read hostnames from file
-    cluster_file = input("Cluster file [shared_cohesity_clusters.txt]: ") or "all_ssh_tools/shared_cohesity_clusters.txt"
+    cluster_file = input("Cluster file [shared_cohesity_clusters.txt]: ") or "allssh_tools/shared_cohesity_clusters.txt"
     
     try:
         with open(cluster_file, 'r') as f:
